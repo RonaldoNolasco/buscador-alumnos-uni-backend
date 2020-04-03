@@ -20,7 +20,7 @@ public class RegistroController{
     @Autowired
     private RegistroService registroService;
 
-    @GetMapping("/registro/{codigo}/registros")
+    @GetMapping("/registros/{codigo}")
     public List<Registro> getRegistroByCodigo(@PathVariable String codigo) {
         return registroService.getRegistrosByCodigo(codigo);
     }
