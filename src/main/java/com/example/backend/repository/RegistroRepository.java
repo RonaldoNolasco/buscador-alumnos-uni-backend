@@ -11,6 +11,7 @@ import java.util.Optional;
 @Repository
 public interface RegistroRepository extends JpaRepository<Registro, Long> {
 
+    @Query("select u from Registro u where u.apellido_materno LIKE CONCAT (?1,'%')")
     List<Registro> findByCodigo(String codigo);
 
 }
