@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "registro")
 
-public class Registro{
+public class Alumno{
     @Id
     private String codigo;
     private String especialidad;
