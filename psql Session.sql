@@ -2,7 +2,7 @@ COPY registro FROM '/home/shooter/Documents/Heroku/buscador-alumnos-uni/scrappin
 --Revisar los que tienen mas de 4 comas
 DELETE FROM registro;
 SELECT * FROM registro;
-SELECT * FROM registro WHERE codigo LIKE '2018%';
+SELECT * FROM registro WHERE codigo LIKE '2018%' AND nombre LIKE 'RON%';
 DROP TABLE registro;
 CREATE TABLE prueba(
     nombre VARCHAR(20),

@@ -1,12 +1,6 @@
 package com.example.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "registro")
@@ -14,7 +8,6 @@ import java.util.List;
 public class Registro{
     @Id
     private String codigo;
-    
     private String especialidad;
     private String apellido_paterno;
     private String apellido_materno;

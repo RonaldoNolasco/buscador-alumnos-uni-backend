@@ -5,21 +5,17 @@ import com.example.backend.repository.RegistroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 @Service
 public class RegistroService{
     @Autowired
     private RegistroRepository registroRepository;
 
-    public List<Registro> getRegistrosByCodigo(String codigo){
-        return registroRepository.findByCodigo(codigo);
+    public List<Registro> getRegistrosByCodigoInAndNombreInAndApInAndAm(String codigo, String nombre, String ap, String am){
+        return registroRepository.findByCodigoInAndNombreInAndApInAndAm(codigo,nombre,ap,am);
     }
 
     public Page<Registro> getRegistro(Pageable pageable) {

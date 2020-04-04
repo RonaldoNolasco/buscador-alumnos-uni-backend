@@ -6,12 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface RegistroRepository extends JpaRepository<Registro, Long> {
 
-    @Query("select u from Registro u where u.codigo LIKE CONCAT (?1,'%')")
-    List<Registro> findByCodigo(String codigo);
+    @Query("SELECT u FROM Registro u WHERE u.codigo LIKE CONCAT (?1,'%') AND u.nombre LIKE CONCAT (?2,'%') AND u.apellido_paterno LIKE CONCAT (?3,'%') AND u.apellido_materno LIKE CONCAT (?4,'%')")
+    List<Registro> findByCodigoInAndNombreInAndApInAndAm(String codigo, String nombre, String ap, String am);
 
 }
