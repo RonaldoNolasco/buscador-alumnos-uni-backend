@@ -14,7 +14,7 @@ public class AlumnoService{
     @Autowired
     private AlumnoRepository alumnoRepository;
 
-    public List<Alumno> getAlumnosByCodigoInAndNombreInAndApInAndAm(String codigo, String nombre, String ap, String am){
+    public List<String> getAlumnosByCodigoInAndNombreInAndApInAndAm(String codigo, String nombre, String ap, String am){
         return alumnoRepository.findByCodigoInAndNombreInAndApInAndAm(codigo,nombre,ap,am);
     }
 

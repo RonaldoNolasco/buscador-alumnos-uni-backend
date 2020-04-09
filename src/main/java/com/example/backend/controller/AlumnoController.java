@@ -18,7 +18,7 @@ public class AlumnoController{
     private AlumnoService alumnoService;
 
     @GetMapping("/alumnos")
-    public List<Alumno> getAlumnosByCodigoInAndNombreInAndApInAndAm(@RequestParam("codigo") final String codigo, @RequestParam("nombre") final String nombre,
+    public List<String> getAlumnosByCodigoInAndNombreInAndApInAndAm(@RequestParam("codigo") final String codigo, @RequestParam("nombre") final String nombre,
     @RequestParam("ap") final String ap, @RequestParam("am") final String am ) {
         return alumnoService.getAlumnosByCodigoInAndNombreInAndApInAndAm(codigo, nombre, ap, am);
     }
