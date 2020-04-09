@@ -19,4 +19,9 @@ public class TwoString{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public TwoString(String a, String b){
+        this.codigo = a;
+        this.nombre = b;
+    }
 }
