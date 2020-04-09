@@ -53,5 +53,10 @@ public class Alumno{
         this.nombre = nombre;
     }
 
+    public Alumno(String a, String b){
+        this.codigo = a;
+        this.nombre = b;
+    }
+
 
 }

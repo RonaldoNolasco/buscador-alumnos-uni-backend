@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.model.Alumno;
+import com.example.backend.model.TwoString;
 import com.example.backend.service.AlumnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,7 +19,7 @@ public class AlumnoController{
     private AlumnoService alumnoService;
 
     @GetMapping("/alumnos")
-    public List<String> getAlumnosByCodigoInAndNombreInAndApInAndAm(@RequestParam("codigo") final String codigo, @RequestParam("nombre") final String nombre,
+    public List<Alumno> getAlumnosByCodigoInAndNombreInAndApInAndAm(@RequestParam("codigo") final String codigo, @RequestParam("nombre") final String nombre,
     @RequestParam("ap") final String ap, @RequestParam("am") final String am ) {
         return alumnoService.getAlumnosByCodigoInAndNombreInAndApInAndAm(codigo, nombre, ap, am);
     }
