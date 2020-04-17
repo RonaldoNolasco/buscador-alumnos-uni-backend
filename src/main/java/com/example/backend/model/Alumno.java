@@ -1,16 +1,27 @@
 package com.example.backend.model;
 
 import javax.persistence.*;
+import org.hibernate.annotations.Immutable;
 
-@Entity
-@Table(name = "registro")
+@Immutable
+@Entity(name = "Alumno")
+@Table(name = "alumno")
 
 public class Alumno{
     @Id
+    @Column(name="codigo", nullable=false, length=9)
     private String codigo;
+
+    @Column(name="especialidad", nullable=false, length=2)
     private String especialidad;
-    private String apellido_paterno;
-    private String apellido_materno;
+
+    @Column(name="apellido_paterno", nullable=false, length=40)
+    private String ap;
+
+    @Column(name="apellido_materno", nullable=false, length=40)
+    private String am;
+
+    @Column(name="nombre", nullable=false, length=40)
     private String nombre;
     
     public String getCodigo() {
@@ -29,20 +40,20 @@ public class Alumno{
         this.especialidad = especialidad;
     }
 
-    public String getApellido_paterno() {
-        return this.apellido_paterno;
+    public String getAp() {
+        return this.ap;
     }
 
-    public void setApellido_paterno(String apellido_paterno) {
-        this.apellido_paterno = apellido_paterno;
+    public void setAp(String ap) {
+        this.ap = ap;
     }
 
-    public String getApellido_materno() {
-        return this.apellido_materno;
+    public String getAm() {
+        return this.am;
     }
 
-    public void setApellido_materno(String apellido_materno) {
-        this.apellido_materno = apellido_materno;
+    public void setAm(String am) {
+        this.am = am;
     }
 
     public String getNombre() {
@@ -52,11 +63,4 @@ public class Alumno{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public Alumno(String a, String b){
-        this.codigo = a;
-        this.nombre = b;
-    }
-
-
 }
