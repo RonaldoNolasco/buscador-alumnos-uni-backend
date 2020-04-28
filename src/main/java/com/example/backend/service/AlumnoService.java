@@ -20,7 +20,7 @@ public class AlumnoService{
 
     public void saveData(){
         try {
-            BufferedReader br = new BufferedReader(new FileReader("files/Alumno.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("files/AlumnoPrueba.txt"));
             while((line = br.readLine()) != null){
                 String [] data = line.split(",");
                 Alumno a = new Alumno();
