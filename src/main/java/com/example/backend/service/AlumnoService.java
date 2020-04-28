@@ -42,4 +42,8 @@ public class AlumnoService{
     public List<Alumno> getAlumnosByCodigoInAndNombreInAndApInAndAm(String codigo, String nombre, String ap, String am){
         return alumnoRepository.findByCodigoInAndNombreInAndApInAndAm(codigo,nombre,ap,am);
     }
+
+    public Page<Alumno> getAlumno(Pageable pageable) {
+        return alumnoRepository.findAll(pageable);
+    }
 }
