@@ -29,11 +29,6 @@ public class AlumnoController{
         return alumnoService.getAlumno(pageable);
     }
 
-    @PostMapping("/alumno")
-    public Alumno createAlumno(@Valid @RequestBody final Alumno alumno) {
-        return alumnoService.createAlumno(alumno);
-    }
-
     @PostConstruct
     public void setDataInDB(){
         alumnoService.saveData();
